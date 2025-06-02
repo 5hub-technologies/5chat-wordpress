@@ -8,12 +8,11 @@
  * Author URI:        https://5chat.io
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       fivechat
+ * Text Domain:       fivechat-live-chat
  * Domain Path:       /languages
  * Requires at least: 5.0
- * Tested up to:      6.5
+ * Tested up to:      6.8
  * Requires PHP:      7.4
- * Network:           false
  */
 
 // Prevent direct file access
@@ -80,7 +79,7 @@ function fivechat_settings_init() {
     // Add the Website Token field
     add_settings_field(
         'fivechat_website_token_field',
-        __( 'Website Token', 'fivechat' ),
+        __( 'Website Token', 'fivechat-live-chat' ),
         'fivechat_token_field_html',
         'fivechat-settings',
         'fivechat_main_section',
@@ -92,47 +91,7 @@ add_action( 'admin_init', 'fivechat_settings_init' );
 /**
  * Add AJAX actions for token validation
  */
-add_action( 'wp_ajax_fivechat_validate_token', 'fivechat_validate_token_ajax' );
-
-/**
- * AJAX handler for token validation
- */
-function fivechat_validate_token_ajax() {
-    // Verify nonce for security
-    if ( ! wp_verify_nonce( $_POST['nonce'], 'fivechat_validate_token' ) ) {
-        wp_die( 'Security check failed' );
-    }
-    
-    // Check user permissions
-    if ( ! current_user_can( 'manage_options' ) ) {
-        wp_die( 'Insufficient permissions' );
-    }
-    
-    $token = sanitize_text_field( $_POST['token'] );
-    
-    // Validate token format first
-    if ( empty( $token ) ) {
-        wp_send_json_error( array( 'message' => __( 'Token cannot be empty.', 'fivechat' ) ) );
-    }
-    
-    if ( ! preg_match( '/^[a-zA-Z0-9_-]+$/', $token ) ) {
-        wp_send_json_error( array( 'message' => __( 'Invalid token format. Use only letters, numbers, hyphens, and underscores.', 'fivechat' ) ) );
-    }
-    
-    // Test the token with 5chat API
-    $validation_result = fivechat_test_token( $token );
-    
-    if ( $validation_result['valid'] ) {
-        wp_send_json_success( array( 
-            'message' => __( 'Token is valid! Chat widget will load successfully.', 'fivechat' ),
-            'token' => $token
-        ) );
-    } else {
-        wp_send_json_error( array( 
-            'message' => $validation_result['error']
-        ) );
-    }
-}
+// Removed client-side validation - using server-side only
 
 /**
  * Test a token by making a request to 5chat widget endpoint
@@ -152,7 +111,7 @@ function fivechat_test_token( $token ) {
     if ( is_wp_error( $response ) ) {
         return array(
             'valid' => false,
-            'error' => __( 'Unable to connect to 5chat. Please check your internet connection and try again.', 'fivechat' )
+            'error' => __( 'Unable to connect to 5chat. Please check your internet connection and try again.', 'fivechat-live-chat' )
         );
     }
     
@@ -167,13 +126,14 @@ function fivechat_test_token( $token ) {
     } elseif ( $response_code === 404 ) {
         return array(
             'valid' => false,
-            'error' => __( 'Invalid token. Please check your Website Token in your 5chat dashboard.', 'fivechat' )
+            'error' => __( 'Invalid token. Please check your Website Token in your 5chat dashboard.', 'fivechat-live-chat' )
         );
     } else {
         return array(
             'valid' => false,
             'error' => sprintf( 
-                __( 'Token validation failed (HTTP %d). Please try again or contact 5chat support.', 'fivechat' ),
+                /* translators: %d: HTTP response status code */
+                __( 'Token validation failed (HTTP %d). Please try again or contact 5chat support.', 'fivechat-live-chat' ),
                 $response_code
             )
         );
@@ -194,7 +154,10 @@ function fivechat_options_page_html() {
             <div class="fivechat-banner-content">
                 <div class="fivechat-logo-section">
                     <div class="fivechat-logo">
-                        <img src="<?php echo FIVECHAT_PLUGIN_URL; ?>assets/icon-128x128.png" width="32" height="32" alt="5chat" class="fivechat-logo-icon">
+                        <?php
+                        // WordPress-compliant image display with direct escaping
+                        echo '<img src="' . esc_url( FIVECHAT_PLUGIN_URL . 'assets/icon-128x128.png' ) . '" width="32" height="32" alt="' . esc_attr__( '5chat', 'fivechat-live-chat' ) . '" class="fivechat-logo-icon" loading="lazy">';
+                        ?>
                         <span class="fivechat-logo-text">5chat</span>
                     </div>
                     <span class="fivechat-tagline">Blazing Fast Live Chat</span>
@@ -202,7 +165,7 @@ function fivechat_options_page_html() {
                 <div class="fivechat-banner-actions">
                     <a href="https://5chat.io/dashboard" target="_blank" class="fivechat-dashboard-btn">
                         <span class="dashicons dashicons-external"></span>
-                        <?php esc_html_e( 'Open Dashboard', 'fivechat' ); ?>
+                        <?php esc_html_e( 'Open Dashboard', 'fivechat-live-chat' ); ?>
                     </a>
                 </div>
             </div>
@@ -211,9 +174,9 @@ function fivechat_options_page_html() {
         <!-- Main Content -->
         <div class="fivechat-main-content">
             <div class="fivechat-content-card">
-                <h1 class="fivechat-page-title"><?php esc_html_e( 'Widget Configuration', 'fivechat' ); ?></h1>
+                <h1 class="fivechat-page-title"><?php esc_html_e( 'Widget Configuration', 'fivechat-live-chat' ); ?></h1>
                 <p class="fivechat-page-description">
-                    <?php esc_html_e( 'Configure your 5chat widget by entering your Website Token below. The chat widget will automatically appear on your site once configured.', 'fivechat' ); ?>
+                    <?php esc_html_e( 'Configure your 5chat widget by entering your Website Token below. The chat widget will automatically appear on your site once configured.', 'fivechat-live-chat' ); ?>
                 </p>
                 
                 <?php settings_errors( 'fivechat_website_token' ); ?>
@@ -224,35 +187,8 @@ function fivechat_options_page_html() {
                     do_settings_sections( 'fivechat-settings' );
                     ?>
                     
-                    <div id="fivechat-validation-status" class="fivechat-validation-container">
-                        <div id="fivechat-validation-loading" class="fivechat-status fivechat-loading" style="display: none;">
-                            <div class="fivechat-status-icon">
-                                <div class="fivechat-spinner"></div>
-                            </div>
-                            <span class="fivechat-status-text"><?php esc_html_e( 'Validating token...', 'fivechat' ); ?></span>
-                        </div>
-                        <div id="fivechat-validation-success" class="fivechat-status fivechat-success" style="display: none;">
-                            <div class="fivechat-status-icon">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                    <circle cx="10" cy="10" r="10" fill="#10B981"/>
-                                    <path d="M6 10L8.5 12.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <span class="fivechat-status-text" id="fivechat-success-message"></span>
-                        </div>
-                        <div id="fivechat-validation-error" class="fivechat-status fivechat-error" style="display: none;">
-                            <div class="fivechat-status-icon">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                    <circle cx="10" cy="10" r="10" fill="#EF4444"/>
-                                    <path d="M13 7L7 13M7 7L13 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <span class="fivechat-status-text" id="fivechat-error-message"></span>
-                        </div>
-                    </div>
-                    
                     <div class="fivechat-form-actions">
-                        <?php submit_button( __( 'Save Configuration', 'fivechat' ), 'primary fivechat-save-btn', 'submit', false ); ?>
+                        <?php submit_button( __( 'Save Configuration', 'fivechat-live-chat' ), 'primary fivechat-save-btn', 'submit', false ); ?>
                     </div>
                 </form>
             </div>
@@ -261,45 +197,45 @@ function fivechat_options_page_html() {
             <div class="fivechat-help-card">
                 <h3 class="fivechat-help-title">
                     <span class="dashicons dashicons-lightbulb"></span>
-                    <?php esc_html_e( 'Quick Setup Guide', 'fivechat' ); ?>
+                    <?php esc_html_e( 'Quick Setup Guide', 'fivechat-live-chat' ); ?>
                 </h3>
                 <div class="fivechat-help-steps">
                     <div class="fivechat-step">
                         <div class="fivechat-step-number">1</div>
                         <div class="fivechat-step-content">
-                            <strong><?php esc_html_e( 'Get Your Token', 'fivechat' ); ?></strong>
+                            <strong><?php esc_html_e( 'Get Your Token', 'fivechat-live-chat' ); ?></strong>
                             <p>
-                                <?php esc_html_e( 'Visit your', 'fivechat' ); ?> 
+                                <?php esc_html_e( 'Visit your', 'fivechat-live-chat' ); ?> 
                                 <a href="https://5chat.io/dashboard/configuration/widget" target="_blank" class="fivechat-link">
-                                    <?php esc_html_e( 'widget configuration page', 'fivechat' ); ?>
+                                    <?php esc_html_e( 'widget configuration page', 'fivechat-live-chat' ); ?>
                                     <span class="dashicons dashicons-external"></span>
                                 </a> 
-                                <?php esc_html_e( 'to copy your Website Token.', 'fivechat' ); ?>
+                                <?php esc_html_e( 'to copy your Website Token.', 'fivechat-live-chat' ); ?>
                             </p>
                         </div>
                     </div>
                     <div class="fivechat-step">
                         <div class="fivechat-step-number">2</div>
                         <div class="fivechat-step-content">
-                            <strong><?php esc_html_e( 'Paste & Validate', 'fivechat' ); ?></strong>
-                            <p><?php esc_html_e( 'Paste your token in the field above. It will be validated automatically in real-time.', 'fivechat' ); ?></p>
+                            <strong><?php esc_html_e( 'Paste & Save', 'fivechat-live-chat' ); ?></strong>
+                            <p><?php esc_html_e( 'Paste your token in the field above and click "Save Configuration". The token will be validated when you save.', 'fivechat-live-chat' ); ?></p>
                         </div>
                     </div>
                     <div class="fivechat-step">
                         <div class="fivechat-step-number">3</div>
                         <div class="fivechat-step-content">
-                            <strong><?php esc_html_e( 'Save & Go Live', 'fivechat' ); ?></strong>
-                            <p><?php esc_html_e( 'Click "Save Configuration" and your chat widget will immediately appear on your website.', 'fivechat' ); ?></p>
+                            <strong><?php esc_html_e( 'Save & Go Live', 'fivechat-live-chat' ); ?></strong>
+                            <p><?php esc_html_e( 'Click "Save Configuration" and your chat widget will immediately appear on your website.', 'fivechat-live-chat' ); ?></p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="fivechat-help-footer">
                     <p>
-                        <strong><?php esc_html_e( 'Need help?', 'fivechat' ); ?></strong> 
-                        <?php esc_html_e( 'Contact', 'fivechat' ); ?> 
+                        <strong><?php esc_html_e( 'Need help?', 'fivechat-live-chat' ); ?></strong> 
+                        <?php esc_html_e( 'Contact', 'fivechat-live-chat' ); ?> 
                         <a href="https://5chat.io" target="_blank" class="fivechat-link">
-                            <?php esc_html_e( '5chat support', 'fivechat' ); ?>
+                            <?php esc_html_e( '5chat support', 'fivechat-live-chat' ); ?>
                             <span class="dashicons dashicons-external"></span>
                         </a>
                     </p>
@@ -466,60 +402,6 @@ function fivechat_options_page_html() {
             color: #6B7280;
             font-size: 14px;
             margin-top: 8px;
-        }
-
-        /* Validation Status */
-        .fivechat-validation-container {
-            margin: 24px 0;
-        }
-
-        .fivechat-status {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 16px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .fivechat-status.fivechat-loading {
-            background: #F1F5F9;
-            color: #1a2231;
-            border: 1px solid #E2E8F0;
-        }
-
-        .fivechat-status.fivechat-success {
-            background: #ECFDF5;
-            color: #065F46;
-            border: 1px solid #D1FAE5;
-        }
-
-        .fivechat-status.fivechat-error {
-            background: #FEF2F2;
-            color: #991B1B;
-            border: 1px solid #FECACA;
-        }
-
-        .fivechat-status-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .fivechat-spinner {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #E2E8F0;
-            border-top: 2px solid #1a2231;
-            border-radius: 50%;
-            animation: fivechat-spin 1s linear infinite;
-        }
-
-        @keyframes fivechat-spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
 
         /* Form Actions */
@@ -697,134 +579,6 @@ function fivechat_options_page_html() {
             }
         }
     </style>
-    
-    <script type="text/javascript">
-        jQuery(document).ready(function($) {
-            var validationTimeout;
-            var lastValidatedToken = '';
-            var isValidToken = false;
-            
-            // Token input field
-            var $tokenField = $('#fivechat_website_token_id');
-            var $form = $('#fivechat-settings-form');
-            var $submitButton = $('#submit');
-            
-            // Validation status elements
-            var $statusContainer = $('#fivechat-validation-status');
-            var $loadingStatus = $('#fivechat-validation-loading');
-            var $successStatus = $('#fivechat-validation-success');
-            var $errorStatus = $('#fivechat-validation-error');
-            var $successMessage = $('#fivechat-success-message');
-            var $errorMessage = $('#fivechat-error-message');
-            
-            // Real-time validation on input
-            $tokenField.on('input', function() {
-                var token = $(this).val().trim();
-                
-                // Clear previous timeout
-                clearTimeout(validationTimeout);
-                
-                // Hide all status messages
-                hideAllStatus();
-                
-                // If empty, don't validate
-                if (token === '') {
-                    isValidToken = false;
-                    return;
-                }
-                
-                // If same as last validated, don't re-validate
-                if (token === lastValidatedToken) {
-                    return;
-                }
-                
-                // Debounce validation (wait 800ms after user stops typing)
-                validationTimeout = setTimeout(function() {
-                    validateToken(token);
-                }, 800);
-            });
-            
-            // Prevent form submission if token is invalid
-            $form.on('submit', function(e) {
-                var token = $tokenField.val().trim();
-                
-                if (token !== '' && !isValidToken) {
-                    e.preventDefault();
-                    
-                    // Show error message
-                    showError('<?php esc_js_e( 'Please enter a valid Website Token before saving.', 'fivechat' ); ?>');
-                    
-                    return false;
-                }
-            });
-            
-            function validateToken(token) {
-                // Show loading status
-                showLoading();
-                
-                $.ajax({
-                    url: ajaxurl,
-                    type: 'POST',
-                    data: {
-                        action: 'fivechat_validate_token',
-                        token: token,
-                        nonce: '<?php echo wp_create_nonce( 'fivechat_validate_token' ); ?>'
-                    },
-                    success: function(response) {
-                        lastValidatedToken = token;
-                        
-                        if (response.success) {
-                            isValidToken = true;
-                            showSuccess(response.data.message);
-                        } else {
-                            isValidToken = false;
-                            showError(response.data.message);
-                        }
-                    },
-                    error: function() {
-                        isValidToken = false;
-                        showError('<?php esc_js_e( 'Connection error. Please try again.', 'fivechat' ); ?>');
-                    }
-                });
-            }
-            
-            function hideAllStatus() {
-                $statusContainer.hide();
-                $loadingStatus.hide();
-                $successStatus.hide();
-                $errorStatus.hide();
-            }
-            
-            function showLoading() {
-                $statusContainer.show();
-                $loadingStatus.show();
-                $successStatus.hide();
-                $errorStatus.hide();
-            }
-            
-            function showSuccess(message) {
-                $successMessage.text(message);
-                $statusContainer.show();
-                $loadingStatus.hide();
-                $successStatus.show();
-                $errorStatus.hide();
-            }
-            
-            function showError(message) {
-                $errorMessage.text(message);
-                $statusContainer.show();
-                $loadingStatus.hide();
-                $successStatus.hide();
-                $errorStatus.show();
-            }
-            
-            // Validate current token on page load if it exists
-            var initialToken = $tokenField.val().trim();
-            if (initialToken !== '') {
-                validateToken(initialToken);
-            }
-        });
-    </script>
     <?php
 }
 
@@ -845,7 +599,7 @@ function fivechat_sanitize_token( $input ) {
         add_settings_error(
             'fivechat_website_token',
             'invalid_token_format',
-            __( 'Invalid Website Token format. Please use only letters, numbers, hyphens, and underscores.', 'fivechat' ),
+            __( 'Invalid Website Token format. Please use only letters, numbers, hyphens, and underscores.', 'fivechat-live-chat' ),
             'error'
         );
         // Return the previous value if validation fails
@@ -860,7 +614,8 @@ function fivechat_sanitize_token( $input ) {
             'fivechat_website_token',
             'invalid_token_api',
             sprintf( 
-                __( 'Token validation failed: %s', 'fivechat' ),
+                /* translators: %s: Error message from the token validation API */
+                __( 'Token validation failed: %s', 'fivechat-live-chat' ),
                 $validation_result['error']
             ),
             'error'
@@ -869,13 +624,17 @@ function fivechat_sanitize_token( $input ) {
         return get_option( 'fivechat_website_token' );
     }
     
-    // Token is valid, show success message
-    add_settings_error(
-        'fivechat_website_token',
-        'token_validated',
-        __( 'Website Token validated successfully! Your 5chat widget is now active.', 'fivechat' ),
-        'success'
-    );
+    // Token is valid - let WordPress show the default success message
+    // Only add our message if this is a different token than before
+    $old_token = get_option( 'fivechat_website_token' );
+    if ( $old_token !== $sanitized ) {
+        add_settings_error(
+            'fivechat_website_token',
+            'token_validated',
+            __( 'Website Token validated successfully! Your 5chat widget is now active.', 'fivechat-live-chat' ),
+            'success'
+        );
+    }
     
     return $sanitized;
 }
@@ -891,9 +650,9 @@ function fivechat_token_field_html() {
            name="fivechat_website_token"
            value="<?php echo esc_attr( $option_value ); ?>"
            class="regular-text"
-           placeholder="<?php esc_attr_e( 'Paste your Website Token here', 'fivechat' ); ?>">
+           placeholder="<?php esc_attr_e( 'Paste your Website Token here', 'fivechat-live-chat' ); ?>">
     <p class="description">
-        <?php esc_html_e( 'Find your Website Token in your 5chat dashboard.', 'fivechat' ); ?>
+        <?php esc_html_e( 'Find your Website Token in your 5chat dashboard.', 'fivechat-live-chat' ); ?>
     </p>
     <?php
 }
@@ -906,12 +665,31 @@ function fivechat_add_widget_script() {
 
     if ( ! empty( $website_token ) ) {
         $sanitized_token = esc_attr( $website_token );
-        ?>
-        <script src="https://5chat.io/widget/<?php echo $sanitized_token; ?>" async></script>
-        <?php
+        $widget_url = 'https://5chat.io/widget/' . $sanitized_token;
+        
+        wp_enqueue_script( 
+            'fivechat-widget', 
+            esc_url( $widget_url ), 
+            array(), 
+            FIVECHAT_VERSION, 
+            false 
+        );
+        
+        // Add async attribute
+        add_filter( 'script_loader_tag', 'fivechat_add_async_attribute', 10, 2 );
     }
 }
-add_action( 'wp_head', 'fivechat_add_widget_script' );
+add_action( 'wp_enqueue_scripts', 'fivechat_add_widget_script' );
+
+/**
+ * Add async attribute to the 5chat widget script
+ */
+function fivechat_add_async_attribute( $tag, $handle ) {
+    if ( 'fivechat-widget' === $handle ) {
+        return str_replace( ' src', ' async src', $tag );
+    }
+    return $tag;
+}
 
 /**
  * Display an admin notice if the 5chat token is not set or invalid.
@@ -922,12 +700,12 @@ function fivechat_admin_notice_missing_token() {
 
     // Check capability and limit to relevant pages
     if ( ! current_user_can( 'manage_options' ) || 
-         ! in_array( $pagenow, [ 'index.php', 'plugins.php', 'options-general.php' ] ) ) {
+         ! in_array( $pagenow, [ 'index.php', 'plugins.php' ], true ) ) {
         return;
     }
     
-    // Don't show on the settings page itself to avoid redundancy
-    if ( $pagenow === 'options-general.php' && isset( $_GET['page'] ) && $_GET['page'] === 'fivechat-settings' ) {
+    // Never show on options-general.php pages to avoid conflicts with settings_errors()
+    if ( $pagenow === 'options-general.php' ) {
         return;
     }
 
@@ -937,7 +715,10 @@ function fivechat_admin_notice_missing_token() {
     
     if ( empty( $website_token ) ) {
         $show_notice = true;
-        $notice_message = __( '<strong>5chat Live Chat is active, but no Website Token is configured.</strong>', 'fivechat' );
+        $notice_message = sprintf( 
+            '<strong>%s</strong>',
+            __( '5chat Live Chat is active, but no Website Token is configured.', 'fivechat-live-chat' )
+        );
     } else {
         // Check if the current token is valid (cached check to avoid too many API calls)
         $token_check_cache = get_transient( 'fivechat_token_valid_' . md5( $website_token ) );
@@ -951,11 +732,17 @@ function fivechat_admin_notice_missing_token() {
             
             if ( ! $validation_result['valid'] ) {
                 $show_notice = true;
-                $notice_message = __( '<strong>5chat Live Chat token appears to be invalid.</strong>', 'fivechat' );
+                $notice_message = sprintf( 
+                    '<strong>%s</strong>',
+                    __( '5chat Live Chat token appears to be invalid.', 'fivechat-live-chat' )
+                );
             }
         } elseif ( $token_check_cache === 'invalid' ) {
             $show_notice = true;
-            $notice_message = __( '<strong>5chat Live Chat token appears to be invalid.</strong>', 'fivechat' );
+            $notice_message = sprintf( 
+                '<strong>%s</strong>',
+                __( '5chat Live Chat token appears to be invalid.', 'fivechat-live-chat' )
+            );
         }
     }
     
@@ -966,10 +753,12 @@ function fivechat_admin_notice_missing_token() {
             <p>
                 <?php
                 echo wp_kses_post( $notice_message );
-                printf(
-                    ' ' . __( 'Please <a href="%s">update your settings</a> to enable the chat widget.', 'fivechat' ),
+                $link_text = sprintf(
+                    /* translators: %s: URL to the settings page */
+                    __( 'Please <a href="%s">update your settings</a> to enable the chat widget.', 'fivechat-live-chat' ),
                     esc_url( $settings_page_url )
                 );
+                echo ' ' . wp_kses_post( $link_text );
                 ?>
             </p>
         </div>
@@ -999,7 +788,7 @@ add_action( 'update_option_fivechat_website_token', 'fivechat_clear_token_cache'
  * Add a link to the settings page directly from the plugins list page.
  */
 function fivechat_add_settings_link( $links ) {
-    $settings_link = '<a href="' . admin_url( 'options-general.php?page=fivechat-settings' ) . '">' . __( 'Settings', 'fivechat' ) . '</a>';
+    $settings_link = '<a href="' . admin_url( 'options-general.php?page=fivechat-settings' ) . '">' . __( 'Settings', 'fivechat-live-chat' ) . '</a>';
     array_unshift( $links, $settings_link );
     return $links;
 }

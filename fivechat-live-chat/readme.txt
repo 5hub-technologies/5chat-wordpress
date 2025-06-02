@@ -1,8 +1,8 @@
-=== 5chat Live Chat ===
+=== 5chat - Blazing fast live chat ===
 Contributors: fivechat
-Tags: chat, live chat, support, widget, customer service, help desk
+Tags: chat, live chat, support, customer service, widget
 Requires at least: 5.0
-Tested up to: 6.5
+Tested up to: 6.8
 Stable tag: 1.0.0
 Requires PHP: 7.4
 License: GPL v2 or later
