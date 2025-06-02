@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5chat Plugin Images Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f0f0f0;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .image-template {
+            margin: 40px 0;
+            border: 2px solid #ccc;
+            background: white;
+            position: relative;
+        }
+        
+        .image-info {
+            padding: 10px;
+            background: #333;
+            color: white;
+            font-size: 14px;
+        }
+        
+        /* Plugin Icon 128x128 */
+        .icon-128 {
+            width: 128px;
+            height: 128px;
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        
+        .icon-128::before {
+            content: '💬';
+            font-size: 60px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .icon-128::after {
+            content: '5';
+            position: absolute;
+            bottom: 8px;
+            right: 12px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Plugin Icon 256x256 */
+        .icon-256 {
+            width: 256px;
+            height: 256px;
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 40px;
+            position: relative;
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+        }
+        
+        .icon-256::before {
+            content: '💬';
+            font-size: 120px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .icon-256::after {
+            content: '5';
+            position: absolute;
+            bottom: 16px;
+            right: 24px;
+            color: white;
+            font-weight: bold;
+            font-size: 48px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Banner 772x250 */
+        .banner-772 {
+            width: 772px;
+            height: 250px;
+            background: linear-gradient(135deg, #3B82F6, #1E40AF, #1D4ED8);
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .banner-content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 0 40px;
+        }
+        
+        .banner-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin-right: 30px;
+        }
+        
+        .banner-text {
+            flex: 1;
+        }
+        
+        .banner-title {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .banner-subtitle {
+            font-size: 18px;
+            margin: 8px 0 0 0;
+            opacity: 0.9;
+        }
+        
+        .banner-tagline {
+            font-size: 16px;
+            opacity: 0.8;
+            text-align: right;
+            margin-left: 20px;
+        }
+        
+        /* Banner 1544x500 (Retina) */
+        .banner-1544 {
+            width: 1544px;
+            height: 500px;
+            background: linear-gradient(135deg, #3B82F6, #1E40AF, #1D4ED8);
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .banner-1544 .banner-content {
+            padding: 0 80px;
+        }
+        
+        .banner-1544 .banner-icon {
+            width: 160px;
+            height: 160px;
+            font-size: 80px;
+            margin-right: 60px;
+        }
+        
+        .banner-1544 .banner-title {
+            font-size: 72px;
+        }
+        
+        .banner-1544 .banner-subtitle {
+            font-size: 36px;
+            margin: 16px 0 0 0;
+        }
+        
+        .banner-1544 .banner-tagline {
+            font-size: 32px;
+        }
+        
+        /* Screenshot mockup */
+        .screenshot {
+            width: 1200px;
+            height: 900px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            position: relative;
+        }
+        
+        .wp-admin-header {
+            height: 46px;
+            background: #1d2327;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            color: white;
+        }
+        
+        .wp-admin-content {
+            padding: 40px;
+        }
+        
+        .settings-page {
+            background: white;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            max-width: 800px;
+        }
+        
+        .settings-title {
+            font-size: 24px;
+            margin: 0 0 20px 0;
+            color: #1d2327;
+        }
+        
+        .form-field {
+            margin: 20px 0;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1d2327;
+        }
+        
+        .form-input {
+            width: 400px;
+            padding: 8px 12px;
+            border: 1px solid #8c8f94;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .help-text {
+            margin-top: 8px;
+            color: #646970;
+            font-size: 13px;
+        }
+        
+        .save-button {
+            background: #2271b1;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>5chat WordPress Plugin - Image Templates</h1>
+        <p>Use these templates to create your plugin images. Take screenshots of each section at the exact dimensions specified.</p>
+        
+        <!-- Plugin Icon 128x128 -->
+        <div class="image-template">
+            <div class="image-info">Plugin Icon - 128x128px (Save as: icon-128x128.png)</div>
+            <div class="icon-128"></div>
+        </div>
+        
+        <!-- Plugin Icon 256x256 -->
+        <div class="image-template">
+            <div class="image-info">Plugin Icon - 256x256px (Save as: icon-256x256.png)</div>
+            <div class="icon-256"></div>
+        </div>
+        
+        <!-- Banner 772x250 -->
+        <div class="image-template">
+            <div class="image-info">Plugin Banner - 772x250px (Save as: banner-772x250.png)</div>
+            <div class="banner-772">
+                <div class="banner-content">
+                    <div class="banner-icon">💬</div>
+                    <div class="banner-text">
+                        <h1 class="banner-title">5chat Live Chat</h1>
+                        <p class="banner-subtitle">Blazing Fast WordPress Integration</p>
+                    </div>
+                    <div class="banner-tagline">
+                        Fast • Simple • Powerful
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Banner 1544x500 (Retina) -->
+        <div class="image-template">
+            <div class="image-info">Plugin Banner Retina - 1544x500px (Save as: banner-1544x500.png)</div>
+            <div class="banner-1544">
+                <div class="banner-content">
+                    <div class="banner-icon">💬</div>
+                    <div class="banner-text">
+                        <h1 class="banner-title">5chat Live Chat</h1>
+                        <p class="banner-subtitle">Blazing Fast WordPress Integration</p>
+                    </div>
+                    <div class="banner-tagline">
+                        Fast • Simple • Powerful
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screenshot 1 - Settings Page -->
+        <div class="image-template">
+            <div class="image-info">Screenshot 1 - Settings Page - 1200x900px (Save as: screenshot-1.png)</div>
+            <div class="screenshot">
+                <div class="wp-admin-header">
+                    <span>WordPress Admin - 5chat Settings</span>
+                </div>
+                <div class="wp-admin-content">
+                    <div class="settings-page">
+                        <h1 class="settings-title">5chat Settings</h1>
+                        <p>Enter your 5chat Website Token below to enable the live chat widget.</p>
+                        
+                        <div class="form-field">
+                            <label class="form-label">Website Token</label>
+                            <input type="text" class="form-input" placeholder="Paste your Website Token here" value="">
+                            <p class="help-text">Find your Website Token in your 5chat dashboard.</p>
+                        </div>
+                        
+                        <button class="save-button">Save Settings</button>
+                        
+                        <div style="margin-top: 30px; padding: 20px; background: #f0f6fc; border: 1px solid #c3d4ed; border-radius: 4px;">
+                            <h3 style="margin: 0 0 10px 0; color: #1d2327;">Need help?</h3>
+                            <p style="margin: 0; color: #1d2327;">Visit your <a href="https://5chat.io/dashboard" target="_blank">5chat dashboard</a> to find your Website Token.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Instructions for taking screenshots
+        console.log('To create plugin images:');
+        console.log('1. Open this HTML file in your browser');
+        console.log('2. Use browser dev tools to set exact dimensions');
+        console.log('3. Take screenshots of each template');
+        console.log('4. Save with the specified filenames');
+        console.log('5. Place in fivechat-live-chat/assets/ directory');
+    </script>
+</body>
+</html> 
