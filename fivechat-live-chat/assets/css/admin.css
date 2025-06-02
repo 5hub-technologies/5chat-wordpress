@@ -1,0 +1,339 @@
+/* Reset and Base Styles */
+.fivechat-settings-wrap {
+    margin: 0 0 0 -20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+}
+
+.fivechat-settings-wrap h1.wp-heading-inline {
+    display: none;
+}
+
+/* Header Banner */
+.fivechat-header-banner {
+    background: linear-gradient(135deg, #1a2231 0%, #0f1419 100%);
+    color: white;
+    padding: 32px;
+    margin: 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.fivechat-banner-content {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.fivechat-logo-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fivechat-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.fivechat-logo-icon {
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.fivechat-logo-text {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.fivechat-tagline {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 44px;
+}
+
+.fivechat-dashboard-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.fivechat-dashboard-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.fivechat-dashboard-btn .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Main Content */
+.fivechat-main-content {
+    padding: 32px;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+}
+
+.fivechat-content-card,
+.fivechat-help-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    border: 1px solid #E5E7EB;
+}
+
+.fivechat-content-card {
+    padding: 32px;
+}
+
+.fivechat-page-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 8px 0;
+    margin-bottom: 15px;
+}
+
+.fivechat-page-description {
+    color: #6B7280;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 32px 0;
+}
+
+/* Form Styles */
+.fivechat-form .form-table {
+    margin: 0;
+}
+
+.fivechat-form .form-table th {
+    padding: 0 0 8px 0;
+    font-weight: 600;
+    color: #374151;
+    font-size: 14px;
+}
+
+.fivechat-form .form-table td {
+    padding: 0 0 24px 0;
+}
+
+.fivechat-form input[type="text"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    background: #FAFAFA;
+}
+
+.fivechat-form input[type="text"]:focus {
+    outline: none;
+    border-color: #1a2231;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(26, 34, 49, 0.1);
+}
+
+.fivechat-form .description {
+    color: #6B7280;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* Form Actions */
+.fivechat-form-actions {
+    padding-top: 24px;
+    border-top: 1px solid #E5E7EB;
+}
+
+.fivechat-save-btn {
+    background: #1a2231 !important;
+    border-color: #1a2231 !important;
+    color: white !important;
+    padding: 12px 24px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.2s ease !important;
+}
+
+.fivechat-save-btn:hover {
+    background: #0f1419 !important;
+    border-color: #0f1419 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 8px rgba(26, 34, 49, 0.3) !important;
+}
+
+/* Help Card */
+.fivechat-help-card {
+    padding: 24px;
+    height: fit-content;
+}
+
+.fivechat-help-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 20px 0;
+}
+
+.fivechat-help-title .dashicons {
+    color: #F59E0B;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.fivechat-help-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.fivechat-step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.fivechat-step-number {
+    width: 32px;
+    height: 32px;
+    background: #1a2231;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.fivechat-step-content strong {
+    color: #111827;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.fivechat-step-content p {
+    color: #6B7280;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.fivechat-help-footer {
+    padding-top: 20px;
+    border-top: 1px solid #E5E7EB;
+}
+
+.fivechat-help-footer p {
+    color: #6B7280;
+    font-size: 14px;
+    margin: 0;
+}
+
+.fivechat-link {
+    color: #1a2231;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.fivechat-link:hover {
+    color: #0f1419;
+    text-decoration: underline;
+}
+
+.fivechat-link .dashicons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+}
+
+/* Settings Errors Override */
+.fivechat-settings-wrap .notice {
+    margin: 0 0 24px 0;
+    border-radius: 8px;
+    border-left-width: 4px;
+}
+
+.fivechat-settings-wrap .notice-success {
+    background: #ECFDF5;
+    border-left-color: #10B981;
+}
+
+.fivechat-settings-wrap .notice-error {
+    background: #FEF2F2;
+    border-left-color: #EF4444;
+}
+
+/* Hide WordPress default updated notice on our page */
+.settings_page_fivechat-settings .notice.updated {
+    display: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .fivechat-main-content {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .fivechat-banner-content {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .fivechat-logo-section {
+        align-items: flex-start;
+    }
+
+    .fivechat-tagline {
+        margin-left: 0;
+    }
+
+    .fivechat-content-card,
+    .fivechat-help-card {
+        padding: 20px;
+    }
+
+    .fivechat-header-banner {
+        padding: 24px 20px;
+    }
+
+    .fivechat-main-content {
+        padding: 20px;
+    }
+} 
