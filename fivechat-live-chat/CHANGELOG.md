@@ -12,20 +12,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Simple token-based configuration system
 - WordPress Settings page under Settings → 5chat
 - Automatic injection of 5chat widget script in website head
-- Admin notice system to alert when token is missing
+- **Real-time token validation** against 5chat API
+- **Live validation feedback** with green check/error indicators
+- Smart admin notification system for missing or invalid tokens
 - Settings link on plugins page for easy access
 - Proper input validation and sanitization
 - Support for WordPress multisite installations
 - Uninstall script for clean removal
 - Internationalization support (i18n ready)
+- Professional plugin images and branding
 
 ### Security
-- Proper nonce verification for settings forms
-- Input sanitization and validation
+- Proper nonce verification for settings forms and AJAX requests
+- Input sanitization and validation with API verification
 - Capability checks for admin functions
 - Prevention of direct file access
+- Secure AJAX endpoints with permission checks
 
 ### Performance
 - Asynchronous loading of chat widget
-- Minimal plugin overhead
-- Efficient option storage and retrieval 
+- Minimal plugin overhead with efficient caching
+- Debounced real-time validation (800ms delay)
+- Cached token validation results (1 hour cache)
+- Efficient option storage and retrieval
+
+### User Experience
+- **Real-time feedback** as users type their token
+- **Visual validation indicators** (loading, success, error states)
+- **Prevents invalid token submission** with client-side validation
+- Smart admin notices that disappear when issues are resolved
+- Professional UI matching WordPress design standards 

@@ -17,11 +17,12 @@ Transform your website visitor engagement with 5chat's lightning-fast live chat 
 **Key Features:**
 
 * **One-click setup** - Just paste your Website Token and you're ready to go
+* **Real-time validation** - Instant feedback when you enter your token
 * **No coding required** - Simple WordPress admin interface
 * **Blazing fast performance** - Asynchronous loading won't slow down your site
 * **Professional appearance** - Beautiful, customizable chat widget
 * **Mobile responsive** - Works perfectly on all devices
-* **Smart notifications** - Get reminded if your token isn't configured
+* **Smart notifications** - Get reminded if your token isn't configured or is invalid
 
 **How it works:**
 
