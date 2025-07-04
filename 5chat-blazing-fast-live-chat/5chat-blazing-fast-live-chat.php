@@ -103,7 +103,7 @@ class FIVECHAT_Plugin {
     /**
      * Plugin deactivation hook
      */
-    public function deactivate() {
+     public function deactivate() {
         // Clean up any temporary data if needed
         // Note: We don't delete the settings here as user might reactivate
     }
