@@ -1,7 +1,6 @@
 <?php
 /**
  * Plugin Name:       5chat - Blazing fast live chat
- * Plugin URI:        https://5chat.io
  * Description:       Easily integrate customer support live chat for your website.
  * Version:           1.0.0
  * Author:            5chat
