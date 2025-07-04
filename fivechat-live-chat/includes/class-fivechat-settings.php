@@ -13,12 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Handles plugin settings and admin page
  */
-class FiveChat_Settings {
+class FIVECHAT_Settings {
 
     /**
      * Token validator instance
      *
-     * @var FiveChat_Token_Validator
+     * @var FIVECHAT_Token_Validator
      */
     private $token_validator;
 
@@ -32,9 +32,9 @@ class FiveChat_Settings {
     /**
      * Constructor
      *
-     * @param FiveChat_Token_Validator $token_validator Token validator instance.
+     * @param FIVECHAT_Token_Validator $token_validator Token validator instance.
      */
-    public function __construct( FiveChat_Token_Validator $token_validator ) {
+    public function __construct( FIVECHAT_Token_Validator $token_validator ) {
         $this->token_validator = $token_validator;
         $this->init_hooks();
     }
@@ -88,7 +88,7 @@ class FiveChat_Settings {
         // Add the Website Token field
         add_settings_field(
             'fivechat_website_token_field',
-            __( 'Website Token', 'fivechat-live-chat' ),
+            __( 'Website Token', '5chat-blazing-fast-live-chat' ),
             array( $this, 'render_token_field' ),
             'fivechat-settings',
             'fivechat_main_section',
@@ -116,7 +116,7 @@ class FiveChat_Settings {
             add_settings_error(
                 'fivechat_website_token',
                 'invalid_token_format',
-                __( 'Invalid Website Token format. Please use only letters, numbers, hyphens, and underscores.', 'fivechat-live-chat' ),
+                __( 'Invalid Website Token format. Please use only letters, numbers, hyphens, and underscores.', '5chat-blazing-fast-live-chat' ),
                 'error'
             );
             // Return the previous value if validation fails
@@ -132,7 +132,7 @@ class FiveChat_Settings {
                 'invalid_token_api',
                 sprintf(
                     /* translators: %s: Error message from the token validation API */
-                    __( 'Token validation failed: %s', 'fivechat-live-chat' ),
+                    __( 'Token validation failed: %s', '5chat-blazing-fast-live-chat' ),
                     $validation_result['error']
                 ),
                 'error'
@@ -147,7 +147,7 @@ class FiveChat_Settings {
             add_settings_error(
                 'fivechat_website_token',
                 'token_validated',
-                __( 'Website Token validated successfully! Your 5chat widget is now active.', 'fivechat-live-chat' ),
+                __( 'Website Token validated successfully! Your 5chat widget is now active.', '5chat-blazing-fast-live-chat' ),
                 'success'
             );
         }
@@ -166,9 +166,9 @@ class FiveChat_Settings {
                name="fivechat_website_token"
                value="<?php echo esc_attr( $option_value ); ?>"
                class="regular-text"
-               placeholder="<?php esc_attr_e( 'Paste your Website Token here', 'fivechat-live-chat' ); ?>">
+               placeholder="<?php esc_attr_e( 'Paste your Website Token here', '5chat-blazing-fast-live-chat' ); ?>">
         <p class="description">
-            <?php esc_html_e( 'Find your Website Token in your 5chat dashboard.', 'fivechat-live-chat' ); ?>
+            <?php esc_html_e( 'Find your Website Token in your 5chat dashboard.', '5chat-blazing-fast-live-chat' ); ?>
         </p>
         <?php
     }
@@ -180,7 +180,7 @@ class FiveChat_Settings {
         if ( ! current_user_can( 'manage_options' ) ) {
             return;
         }
-        
+
         // Check if we should suppress WordPress default success message
         $suppress_default = $this->should_suppress_default_notices();
         ?>
@@ -193,12 +193,11 @@ class FiveChat_Settings {
                             <?php $this->render_logo_image(); ?>
                             <span class="fivechat-logo-text">5chat</span>
                         </div>
-                        <span class="fivechat-tagline">Blazing Fast Live Chat</span>
                     </div>
                     <div class="fivechat-banner-actions">
                         <a href="https://5chat.io/dashboard" target="_blank" class="fivechat-dashboard-btn">
                             <span class="dashicons dashicons-external"></span>
-                            <?php esc_html_e( 'Open Dashboard', 'fivechat-live-chat' ); ?>
+                            <?php esc_html_e( 'Open Dashboard', '5chat-blazing-fast-live-chat' ); ?>
                         </a>
                     </div>
                 </div>
@@ -207,68 +206,68 @@ class FiveChat_Settings {
             <!-- Main Content -->
             <div class="fivechat-main-content">
                 <div class="fivechat-content-card">
-                    <h1 class="fivechat-page-title"><?php esc_html_e( 'Widget Configuration', 'fivechat-live-chat' ); ?></h1>
+                    <h1 class="fivechat-page-title"><?php esc_html_e( 'Widget Configuration', '5chat-blazing-fast-live-chat' ); ?></h1>
                     <p class="fivechat-page-description">
-                        <?php esc_html_e( 'Configure your 5chat widget by entering your Website Token below. The chat widget will automatically appear on your site once configured.', 'fivechat-live-chat' ); ?>
+                        <?php esc_html_e( 'Configure your 5chat widget by entering your Website Token below. The chat widget will automatically appear on your site once configured.', '5chat-blazing-fast-live-chat' ); ?>
                     </p>
-                    
+
                     <?php $this->display_custom_settings_errors( $suppress_default ); ?>
-                    
+
                     <form action="options.php" method="post" id="fivechat-settings-form" class="fivechat-form">
                         <?php
                         settings_fields( 'fivechat_settings_group' );
                         do_settings_sections( 'fivechat-settings' );
                         ?>
-                        
+
                         <div class="fivechat-form-actions">
-                            <?php submit_button( __( 'Save Configuration', 'fivechat-live-chat' ), 'primary fivechat-save-btn', 'submit', false ); ?>
+                            <?php submit_button( __( 'Save Configuration', '5chat-blazing-fast-live-chat' ), 'primary fivechat-save-btn', 'submit', false ); ?>
                         </div>
                     </form>
                 </div>
-                
+
                 <!-- Help Section -->
                 <div class="fivechat-help-card">
                     <h3 class="fivechat-help-title">
                         <span class="dashicons dashicons-lightbulb"></span>
-                        <?php esc_html_e( 'Quick Setup Guide', 'fivechat-live-chat' ); ?>
+                        <?php esc_html_e( 'Quick Setup Guide', '5chat-blazing-fast-live-chat' ); ?>
                     </h3>
                     <div class="fivechat-help-steps">
                         <div class="fivechat-step">
                             <div class="fivechat-step-number">1</div>
                             <div class="fivechat-step-content">
-                                <strong><?php esc_html_e( 'Get Your Token', 'fivechat-live-chat' ); ?></strong>
+                                <strong><?php esc_html_e( 'Get Your Token', '5chat-blazing-fast-live-chat' ); ?></strong>
                                 <p>
-                                    <?php esc_html_e( 'Visit your', 'fivechat-live-chat' ); ?> 
+                                    <?php esc_html_e( 'Visit your', '5chat-blazing-fast-live-chat' ); ?>
                                     <a href="https://5chat.io/dashboard/configuration/widget" target="_blank" class="fivechat-link">
-                                        <?php esc_html_e( 'widget configuration page', 'fivechat-live-chat' ); ?>
+                                        <?php esc_html_e( 'widget configuration page', '5chat-blazing-fast-live-chat' ); ?>
                                         <span class="dashicons dashicons-external"></span>
-                                    </a> 
-                                    <?php esc_html_e( 'to copy your Website Token.', 'fivechat-live-chat' ); ?>
+                                    </a>
+                                    <?php esc_html_e( 'to copy your Website Token.', '5chat-blazing-fast-live-chat' ); ?>
                                 </p>
                             </div>
                         </div>
                         <div class="fivechat-step">
                             <div class="fivechat-step-number">2</div>
                             <div class="fivechat-step-content">
-                                <strong><?php esc_html_e( 'Paste & Save', 'fivechat-live-chat' ); ?></strong>
-                                <p><?php esc_html_e( 'Paste your token in the field above and click "Save Configuration". The token will be validated when you save.', 'fivechat-live-chat' ); ?></p>
+                                <strong><?php esc_html_e( 'Paste & Save', '5chat-blazing-fast-live-chat' ); ?></strong>
+                                <p><?php esc_html_e( 'Paste your token in the field above and click "Save Configuration". The token will be validated when you save.', '5chat-blazing-fast-live-chat' ); ?></p>
                             </div>
                         </div>
                         <div class="fivechat-step">
                             <div class="fivechat-step-number">3</div>
                             <div class="fivechat-step-content">
-                                <strong><?php esc_html_e( 'Save & Go Live', 'fivechat-live-chat' ); ?></strong>
-                                <p><?php esc_html_e( 'Click "Save Configuration" and your chat widget will immediately appear on your website.', 'fivechat-live-chat' ); ?></p>
+                                <strong><?php esc_html_e( 'Save & Go Live', '5chat-blazing-fast-live-chat' ); ?></strong>
+                                <p><?php esc_html_e( 'Click "Save Configuration" and your chat widget will immediately appear on your website.', '5chat-blazing-fast-live-chat' ); ?></p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="fivechat-help-footer">
                         <p>
-                            <strong><?php esc_html_e( 'Need help?', 'fivechat-live-chat' ); ?></strong> 
-                            <?php esc_html_e( 'Contact', 'fivechat-live-chat' ); ?> 
+                            <strong><?php esc_html_e( 'Need help?', '5chat-blazing-fast-live-chat' ); ?></strong>
+                            <?php esc_html_e( 'Contact', '5chat-blazing-fast-live-chat' ); ?>
                             <a href="https://5chat.io" target="_blank" class="fivechat-link">
-                                <?php esc_html_e( '5chat support', 'fivechat-live-chat' ); ?>
+                                <?php esc_html_e( '5chat support', '5chat-blazing-fast-live-chat' ); ?>
                                 <span class="dashicons dashicons-external"></span>
                             </a>
                         </p>
@@ -325,13 +324,13 @@ class FiveChat_Settings {
         $image_url = FIVECHAT_PLUGIN_URL . 'assets/icon-128x128.png';
         $image_attributes = array(
             'src'     => esc_url( $image_url ),
-            'width'   => '32',
-            'height'  => '32',
-            'alt'     => esc_attr__( '5chat', 'fivechat-live-chat' ),
+            'width'   => '64',
+            'height'  => '64',
+            'alt'     => esc_attr__( '5chat', '5chat-blazing-fast-live-chat' ),
             'class'   => 'fivechat-logo-icon',
             'loading' => 'lazy',
         );
-        
+
         // Build image tag with proper escaping
         printf(
             '<img %s>',
@@ -347,7 +346,7 @@ class FiveChat_Settings {
      */
     private function build_image_attributes( $attributes ) {
         $attribute_strings = array();
-        
+
         foreach ( $attributes as $key => $value ) {
             $attribute_strings[] = sprintf(
                 '%s="%s"',
@@ -355,7 +354,7 @@ class FiveChat_Settings {
                 esc_attr( $value )
             );
         }
-        
+
         return implode( ' ', $attribute_strings );
     }
 
@@ -367,7 +366,7 @@ class FiveChat_Settings {
     private function display_custom_settings_errors( $suppress_default = false ) {
         // Use captured errors instead of getting them again
         $settings_errors = $this->captured_errors;
-        
+
         if ( empty( $settings_errors ) ) {
             return;
         }
@@ -428,14 +427,14 @@ class FiveChat_Settings {
         if ( ! $screen || 'settings_page_fivechat-settings' !== $screen->id ) {
             return;
         }
-        
+
         // Capture our settings errors
         $this->captured_errors = get_settings_errors( 'fivechat_website_token' );
-        
+
         // Clear them from WordPress to prevent default display
         if ( ! empty( $this->captured_errors ) ) {
             global $wp_settings_errors;
             unset( $wp_settings_errors['fivechat_website_token'] );
         }
     }
-} 
+}

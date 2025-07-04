@@ -38,6 +38,25 @@ The plugin adds the required JavaScript snippet to your site's head section auto
 
 5chat is a modern live chat platform designed for speed and simplicity. Get started at [https://5chat.io](https://5chat.io).
 
+== External Services ==
+
+This plugin connects to the 5chat service to provide live chat functionality on your website. Here's what you need to know:
+
+**What the service is and what it is used for:**
+5chat is a third-party live chat service that provides real-time customer support chat widgets. The plugin uses this service to validate your website token and load the chat widget on your site.
+
+**What data is sent and when:**
+- When you save your website token in the plugin settings, the plugin validates the token by sending a request to https://5chat.io/widget/[your-token] to verify it's valid
+- The plugin loads the 5chat JavaScript widget on your website frontend using your provided token
+- The actual chat functionality (messages, visitor data, etc.) is handled directly by the 5chat service according to their privacy practices
+
+**Service provider information:**
+This service is provided by 5chat. You can review their terms of service and privacy policy:
+- Terms of Service: https://5chat.io/terms
+- Privacy Policy: https://5chat.io/privacy
+
+By using this plugin, you acknowledge that your website will connect to the 5chat service and that data transmission will occur according to 5chat's terms and privacy policy.
+
 == Installation ==
 
 **Automatic Installation (Recommended):**

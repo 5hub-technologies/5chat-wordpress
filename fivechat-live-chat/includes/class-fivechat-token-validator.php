@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Handles token validation with 5chat API
  */
-class FiveChat_Token_Validator {
+class FIVECHAT_Token_Validator {
 
     /**
      * Cache group for transients
@@ -39,7 +39,7 @@ class FiveChat_Token_Validator {
         if ( empty( $token ) ) {
             return array(
                 'valid' => false,
-                'error' => __( 'Token cannot be empty.', 'fivechat-live-chat' ),
+                'error' => __( 'Token cannot be empty.', '5chat-blazing-fast-live-chat' ),
             );
         }
 
@@ -50,7 +50,7 @@ class FiveChat_Token_Validator {
         if ( false !== $cached_result ) {
             return array(
                 'valid' => ( 'valid' === $cached_result ),
-                'error' => ( 'valid' === $cached_result ) ? '' : __( 'Invalid token. Please check your Website Token in your 5chat dashboard.', 'fivechat-live-chat' ),
+                'error' => ( 'valid' === $cached_result ) ? '' : __( 'Invalid token. Please check your Website Token in your 5chat dashboard.', '5chat-blazing-fast-live-chat' ),
             );
         }
 
@@ -85,7 +85,7 @@ class FiveChat_Token_Validator {
         if ( is_wp_error( $response ) ) {
             return array(
                 'valid' => false,
-                'error' => __( 'Unable to connect to 5chat. Please check your internet connection and try again.', 'fivechat-live-chat' ),
+                'error' => __( 'Unable to connect to 5chat. Please check your internet connection and try again.', '5chat-blazing-fast-live-chat' ),
             );
         }
 
@@ -100,14 +100,14 @@ class FiveChat_Token_Validator {
         } elseif ( 404 === $response_code ) {
             return array(
                 'valid' => false,
-                'error' => __( 'Invalid token. Please check your Website Token in your 5chat dashboard.', 'fivechat-live-chat' ),
+                'error' => __( 'Invalid token. Please check your Website Token in your 5chat dashboard.', '5chat-blazing-fast-live-chat' ),
             );
         } else {
             return array(
                 'valid' => false,
                 'error' => sprintf(
                     /* translators: %d: HTTP response status code */
-                    __( 'Token validation failed (HTTP %d). Please try again or contact 5chat support.', 'fivechat-live-chat' ),
+                    __( 'Token validation failed (HTTP %d). Please try again or contact 5chat support.', '5chat-blazing-fast-live-chat' ),
                     $response_code
                 ),
             );

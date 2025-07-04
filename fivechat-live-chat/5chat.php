@@ -8,8 +8,7 @@
  * Author URI:        https://5chat.io
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       fivechat-live-chat
- * Domain Path:       /languages
+ * Text Domain:       5chat-blazing-fast-live-chat
  * Requires at least: 5.0
  * Tested up to:      6.8
  * Requires PHP:      7.4
@@ -29,12 +28,12 @@ define( 'FIVECHAT_PLUGIN_FILE', __FILE__ );
 /**
  * Main plugin class
  */
-class FiveChat_Plugin {
+class FIVECHAT_Plugin {
 
     /**
      * Instance of this class
      *
-     * @var FiveChat_Plugin
+     * @var FIVECHAT_Plugin
      */
     private static $instance = null;
 
@@ -48,7 +47,7 @@ class FiveChat_Plugin {
     /**
      * Get the singleton instance
      *
-     * @return FiveChat_Plugin
+     * @return FIVECHAT_Plugin
      */
     public static function get_instance() {
         if ( null === self::$instance ) {
@@ -88,10 +87,10 @@ class FiveChat_Plugin {
      * Initialize plugin components
      */
     private function init_components() {
-        $this->components['token_validator'] = new FiveChat_Token_Validator();
-        $this->components['settings'] = new FiveChat_Settings( $this->components['token_validator'] );
-        $this->components['admin'] = new FiveChat_Admin( $this->components['token_validator'] );
-        $this->components['frontend'] = new FiveChat_Frontend();
+        $this->components['token_validator'] = new FIVECHAT_Token_Validator();
+        $this->components['settings'] = new FIVECHAT_Settings( $this->components['token_validator'] );
+        $this->components['admin'] = new FIVECHAT_Admin( $this->components['token_validator'] );
+        $this->components['frontend'] = new FIVECHAT_Frontend();
     }
 
     /**
@@ -125,7 +124,7 @@ class FiveChat_Plugin {
  * Initialize the plugin
  */
 function fivechat_init() {
-    return FiveChat_Plugin::get_instance();
+    return FIVECHAT_Plugin::get_instance();
 }
 
 // Start the plugin

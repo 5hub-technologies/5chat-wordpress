@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Handles frontend widget functionality
  */
-class FiveChat_Frontend {
+class FIVECHAT_Frontend {
 
     /**
      * Constructor

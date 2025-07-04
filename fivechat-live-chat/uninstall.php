@@ -28,20 +28,20 @@ if ( is_multisite() ) {
         
         // Clean up all token validation cache transients
         wp_cache_flush();
-        delete_transient_like( 'fivechat_token_valid_' );
+        fivechat_delete_transient_like( 'fivechat_token_valid_' );
         
         restore_current_blog();
     }
 } else {
     // Single site - clean up transients
     wp_cache_flush();
-    delete_transient_like( 'fivechat_token_valid_' );
+    fivechat_delete_transient_like( 'fivechat_token_valid_' );
 }
 
 /**
  * Helper function to delete transients with wildcard pattern
  */
-function delete_transient_like( $prefix ) {
+function fivechat_delete_transient_like( $prefix ) {
     // Instead of direct database query, we'll use a more WordPress-appropriate approach
     // This is acceptable for uninstall scripts where we need to clean up completely
     

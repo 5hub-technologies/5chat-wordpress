@@ -13,21 +13,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Handles admin-related functionality
  */
-class FiveChat_Admin {
+class FIVECHAT_Admin {
 
     /**
      * Token validator instance
      *
-     * @var FiveChat_Token_Validator
+     * @var FIVECHAT_Token_Validator
      */
     private $token_validator;
 
     /**
      * Constructor
      *
-     * @param FiveChat_Token_Validator $token_validator Token validator instance.
+     * @param FIVECHAT_Token_Validator $token_validator Token validator instance.
      */
-    public function __construct( FiveChat_Token_Validator $token_validator ) {
+    public function __construct( FIVECHAT_Token_Validator $token_validator ) {
         $this->token_validator = $token_validator;
         $this->init_hooks();
     }
@@ -66,7 +66,7 @@ class FiveChat_Admin {
             $show_notice = true;
             $notice_message = sprintf( 
                 '<strong>%s</strong>',
-                __( '5chat Live Chat is active, but no Website Token is configured.', 'fivechat-live-chat' )
+                __( '5chat Live Chat is active, but no Website Token is configured.', '5chat-blazing-fast-live-chat' )
             );
         } else {
             // Check if the current token is valid (cached check to avoid too many API calls)
@@ -80,14 +80,14 @@ class FiveChat_Admin {
                     $show_notice = true;
                     $notice_message = sprintf( 
                         '<strong>%s</strong>',
-                        __( '5chat Live Chat token appears to be invalid.', 'fivechat-live-chat' )
+                        __( '5chat Live Chat token appears to be invalid.', '5chat-blazing-fast-live-chat' )
                     );
                 }
             } elseif ( 'invalid' === $token_check_cache ) {
                 $show_notice = true;
                 $notice_message = sprintf( 
                     '<strong>%s</strong>',
-                    __( '5chat Live Chat token appears to be invalid.', 'fivechat-live-chat' )
+                    __( '5chat Live Chat token appears to be invalid.', '5chat-blazing-fast-live-chat' )
                 );
             }
         }
@@ -111,7 +111,7 @@ class FiveChat_Admin {
                 echo wp_kses_post( $message );
                 $link_text = sprintf(
                     /* translators: %s: URL to the settings page */
-                    __( 'Please <a href="%s">update your settings</a> to enable the chat widget.', 'fivechat-live-chat' ),
+                    __( 'Please <a href="%s">update your settings</a> to enable the chat widget.', '5chat-blazing-fast-live-chat' ),
                     esc_url( $settings_page_url )
                 );
                 echo ' ' . wp_kses_post( $link_text );
@@ -131,7 +131,7 @@ class FiveChat_Admin {
         $settings_link = sprintf(
             '<a href="%s">%s</a>',
             esc_url( admin_url( 'options-general.php?page=fivechat-settings' ) ),
-            esc_html__( 'Settings', 'fivechat-live-chat' )
+            esc_html__( 'Settings', '5chat-blazing-fast-live-chat' )
         );
         array_unshift( $links, $settings_link );
         return $links;
@@ -150,7 +150,7 @@ class FiveChat_Admin {
                 'has_token' => false,
                 'is_valid' => false,
                 'cache_status' => false,
-                'message' => __( 'No token configured', 'fivechat-live-chat' ),
+                'message' => __( 'No token configured', '5chat-blazing-fast-live-chat' ),
             );
         }
 
@@ -162,8 +162,8 @@ class FiveChat_Admin {
             'is_valid' => $is_valid,
             'cache_status' => $cache_status,
             'message' => $is_valid ? 
-                __( 'Token is valid and cached', 'fivechat-live-chat' ) : 
-                __( 'Token validation required', 'fivechat-live-chat' ),
+                __( 'Token is valid and cached', '5chat-blazing-fast-live-chat' ) : 
+                __( 'Token validation required', '5chat-blazing-fast-live-chat' ),
         );
     }
 } 
