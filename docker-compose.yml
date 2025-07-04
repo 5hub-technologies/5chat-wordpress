@@ -33,7 +33,7 @@ services:
     volumes:
       - wordpress_data:/var/www/html
       # Mount the plugin directory for easy development
-      - ./fivechat-live-chat:/var/www/html/wp-content/plugins/fivechat-live-chat
+      - ./5chat-blazing-fast-live-chat:/var/www/html/wp-content/plugins/5chat-blazing-fast-live-chat
       # Mount custom PHP configuration to increase upload limits
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     networks:
@@ -61,4 +61,4 @@ volumes:
 
 networks:
   wordpress_network:
-    driver: bridge 
+    driver: bridge

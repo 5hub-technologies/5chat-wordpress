@@ -3,9 +3,9 @@
 # 5chat WordPress Plugin Package Creator
 # This script creates a distributable zip file of the plugin
 
-PLUGIN_NAME="fivechat-live-chat"
+PLUGIN_NAME="5chat-blazing-fast-live-chat"
 VERSION="1.0.0"
-PACKAGE_NAME="${PLUGIN_NAME}-${VERSION}"
+PACKAGE_NAME="5chat-blazing-fast-live-chat"
 
 echo "Creating package for ${PLUGIN_NAME} v${VERSION}..."
 
@@ -48,4 +48,4 @@ echo "4. Go to Settings → 5chat to configure"
 echo ""
 echo "For WordPress.org submission:"
 echo "- Upload plugin zip to WordPress.org"
-echo "- Upload assets separately to SVN assets directory" 
+echo "- Upload assets separately to SVN assets directory"
