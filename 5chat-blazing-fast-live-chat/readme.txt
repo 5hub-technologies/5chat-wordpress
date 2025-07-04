@@ -1,5 +1,5 @@
 === 5chat - Blazing fast live chat ===
-Contributors: fivechat
+Contributors: pandronu
 Tags: chat, live chat, support, customer service, widget, ai, fast, performance
 Requires at least: 5.0
 Tested up to: 6.8
