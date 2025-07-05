@@ -1,9 +1,9 @@
 === 5chat - Blazing fast live chat ===
 Contributors: pandronu
-Tags: chat, live chat, support, customer service, widget, ai, fast, performance
+Tags: live chat, support, customer service, widget, ai
 Requires at least: 5.0
 Tested up to: 6.8
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 7.4
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -176,6 +176,9 @@ Yes! 5chat provides a mobile app so you can manage customer conversations and st
 * Proper uninstall cleanup
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+Added support for 10+ languages
 
 = 1.0.0 =
 Initial version of the 5chat Live Chat plugin. Install to add professional live chat to your WordPress site in minutes.

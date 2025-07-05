@@ -1,0 +1,164 @@
+# Japanese translation for 5chat - Blazing fast live chat
+# Copyright (C) 2024 5chat
+# This file is distributed under the same license as the 5chat - Blazing fast live chat package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 5chat - Blazing fast live chat 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: includes/class-fivechat-admin.php:69
+msgid "5chat Live Chat is active, but no Website Token is configured."
+msgstr "5chat Live Chatは有効ですが、ウェブサイトトークンが設定されていません。"
+
+#: includes/class-fivechat-admin.php:83
+msgid "5chat Live Chat token appears to be invalid."
+msgstr "5chat Live Chatトークンが無効のようです。"
+
+#: includes/class-fivechat-admin.php:90
+msgid "5chat Live Chat token appears to be invalid."
+msgstr "5chat Live Chatトークンが無効のようです。"
+
+#. translators: %s: URL to the settings page
+#: includes/class-fivechat-admin.php:114
+msgid "Please <a href="%s">update your settings</a> to enable the chat widget."
+msgstr "チャットウィジェットを有効にするには、<a href="%s">設定を更新</a>してください。"
+
+#: includes/class-fivechat-admin.php:134
+msgid "Settings"
+msgstr "設定"
+
+#: includes/class-fivechat-admin.php:153
+msgid "No token configured"
+msgstr "トークンが設定されていません"
+
+#: includes/class-fivechat-admin.php:165
+msgid "Token is valid and cached"
+msgstr "トークンは有効でキャッシュされています"
+
+#: includes/class-fivechat-admin.php:166
+msgid "Token validation required"
+msgstr "トークンの検証が必要です"
+
+#: includes/class-fivechat-token-validator.php:42
+msgid "Token cannot be empty."
+msgstr "トークンを空にすることはできません。"
+
+#: includes/class-fivechat-token-validator.php:53
+msgid "Invalid token. Please check your Website Token in your 5chat dashboard."
+msgstr "無効なトークンです。5chatダッシュボードでウェブサイトトークンを確認してください。"
+
+#: includes/class-fivechat-token-validator.php:88
+msgid "Unable to connect to 5chat. Please check your internet connection and try again."
+msgstr "5chatに接続できません。インターネット接続を確認して、もう一度お試しください。"
+
+#: includes/class-fivechat-token-validator.php:103
+msgid "Invalid token. Please check your Website Token in your 5chat dashboard."
+msgstr "無効なトークンです。5chatダッシュボードでウェブサイトトークンを確認してください。"
+
+#. translators: %d: HTTP response status code
+#: includes/class-fivechat-token-validator.php:110
+msgid "Token validation failed (HTTP %d). Please try again or contact 5chat support."
+msgstr "トークンの検証に失敗しました（HTTP %d）。もう一度お試しいただくか、5chatサポートにお問い合わせください。"
+
+#: includes/class-fivechat-settings.php:91
+msgid "Website Token"
+msgstr "ウェブサイトトークン"
+
+#: includes/class-fivechat-settings.php:119
+msgid "Invalid Website Token format. Please use only letters, numbers, hyphens, and underscores."
+msgstr "無効なウェブサイトトークン形式です。文字、数字、ハイフン、アンダースコアのみを使用してください。"
+
+#. translators: %s: Error message from the token validation API
+#: includes/class-fivechat-settings.php:135
+msgid "Token validation failed: %s"
+msgstr "トークンの検証に失敗しました：%s"
+
+#: includes/class-fivechat-settings.php:150
+msgid "Website Token validated successfully! Your 5chat widget is now active."
+msgstr "ウェブサイトトークンが正常に検証されました！5chatウィジェットがアクティブになりました。"
+
+#: includes/class-fivechat-settings.php:169
+msgid "Paste your Website Token here"
+msgstr "ウェブサイトトークンをここに貼り付けてください"
+
+#: includes/class-fivechat-settings.php:171
+msgid "Find your Website Token in your 5chat dashboard."
+msgstr "5chatダッシュボードでウェブサイトトークンを見つけてください。"
+
+#: includes/class-fivechat-settings.php:200
+msgid "Open Dashboard"
+msgstr "ダッシュボードを開く"
+
+#: includes/class-fivechat-settings.php:209
+msgid "Widget Configuration"
+msgstr "ウィジェット設定"
+
+#: includes/class-fivechat-settings.php:211
+msgid "Configure your 5chat widget by entering your Website Token below. The chat widget will automatically appear on your site once configured."
+msgstr "下記にウェブサイトトークンを入力して、5chatウィジェットを設定してください。設定が完了すると、チャットウィジェットがサイトに自動的に表示されます。"
+
+#: includes/class-fivechat-settings.php:223
+msgid "Save Configuration"
+msgstr "設定を保存"
+
+#: includes/class-fivechat-settings.php:232
+msgid "Quick Setup Guide"
+msgstr "クイックセットアップガイド"
+
+#: includes/class-fivechat-settings.php:238
+msgid "Get Your Token"
+msgstr "トークンを取得"
+
+#: includes/class-fivechat-settings.php:240
+msgid "Visit your"
+msgstr "あなたの"
+
+#: includes/class-fivechat-settings.php:242
+msgid "widget configuration page"
+msgstr "ウィジェット設定ページ"
+
+#: includes/class-fivechat-settings.php:245
+msgid "to copy your Website Token."
+msgstr "にアクセスして、ウェブサイトトークンをコピーしてください。"
+
+#: includes/class-fivechat-settings.php:252
+msgid "Paste & Save"
+msgstr "貼り付けて保存"
+
+#: includes/class-fivechat-settings.php:253
+msgid "Paste your token in the field above and click "Save Configuration". The token will be validated when you save."
+msgstr "上記のフィールドにトークンを貼り付けて、「設定を保存」をクリックしてください。保存時にトークンが検証されます。"
+
+#: includes/class-fivechat-settings.php:259
+msgid "Save & Go Live"
+msgstr "保存して有効化"
+
+#: includes/class-fivechat-settings.php:260
+msgid "Click "Save Configuration" and your chat widget will immediately appear on your website."
+msgstr "「設定を保存」をクリックすると、チャットウィジェットがウェブサイトに即座に表示されます。"
+
+#: includes/class-fivechat-settings.php:267
+msgid "Need help?"
+msgstr "サポートが必要ですか？"
+
+#: includes/class-fivechat-settings.php:268
+msgid "Contact"
+msgstr "お問い合わせ"
+
+#: includes/class-fivechat-settings.php:270
+msgid "5chat support"
+msgstr "5chatサポート"
+
+#: includes/class-fivechat-settings.php:329
+msgid "5chat"
+msgstr "5chat"

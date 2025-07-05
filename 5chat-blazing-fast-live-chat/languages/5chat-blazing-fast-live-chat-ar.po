@@ -1,0 +1,164 @@
+# Arabic translation for 5chat - Blazing fast live chat
+# Copyright (C) 2024 5chat
+# This file is distributed under the same license as the 5chat - Blazing fast live chat package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 5chat - Blazing fast live chat 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: includes/class-fivechat-admin.php:69
+msgid "5chat Live Chat is active, but no Website Token is configured."
+msgstr "5chat Live Chat نشط، لكن لم يتم تكوين رمز موقع الويب."
+
+#: includes/class-fivechat-admin.php:83
+msgid "5chat Live Chat token appears to be invalid."
+msgstr "يبدو أن رمز 5chat Live Chat غير صالح."
+
+#: includes/class-fivechat-admin.php:90
+msgid "5chat Live Chat token appears to be invalid."
+msgstr "يبدو أن رمز 5chat Live Chat غير صالح."
+
+#. translators: %s: URL to the settings page
+#: includes/class-fivechat-admin.php:114
+msgid "Please <a href="%s">update your settings</a> to enable the chat widget."
+msgstr "يرجى <a href="%s">تحديث إعداداتك</a> لتمكين أداة الدردشة."
+
+#: includes/class-fivechat-admin.php:134
+msgid "Settings"
+msgstr "الإعدادات"
+
+#: includes/class-fivechat-admin.php:153
+msgid "No token configured"
+msgstr "لم يتم تكوين رمز"
+
+#: includes/class-fivechat-admin.php:165
+msgid "Token is valid and cached"
+msgstr "الرمز صالح ومحفوظ في الذاكرة المؤقتة"
+
+#: includes/class-fivechat-admin.php:166
+msgid "Token validation required"
+msgstr "مطلوب التحقق من الرمز"
+
+#: includes/class-fivechat-token-validator.php:42
+msgid "Token cannot be empty."
+msgstr "لا يمكن أن يكون الرمز فارغًا."
+
+#: includes/class-fivechat-token-validator.php:53
+msgid "Invalid token. Please check your Website Token in your 5chat dashboard."
+msgstr "رمز غير صالح. يرجى التحقق من رمز موقع الويب الخاص بك في لوحة تحكم 5chat."
+
+#: includes/class-fivechat-token-validator.php:88
+msgid "Unable to connect to 5chat. Please check your internet connection and try again."
+msgstr "تعذر الاتصال بـ 5chat. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى."
+
+#: includes/class-fivechat-token-validator.php:103
+msgid "Invalid token. Please check your Website Token in your 5chat dashboard."
+msgstr "رمز غير صالح. يرجى التحقق من رمز موقع الويب الخاص بك في لوحة تحكم 5chat."
+
+#. translators: %d: HTTP response status code
+#: includes/class-fivechat-token-validator.php:110
+msgid "Token validation failed (HTTP %d). Please try again or contact 5chat support."
+msgstr "فشل التحقق من الرمز (HTTP %d). يرجى المحاولة مرة أخرى أو الاتصال بدعم 5chat."
+
+#: includes/class-fivechat-settings.php:91
+msgid "Website Token"
+msgstr "رمز موقع الويب"
+
+#: includes/class-fivechat-settings.php:119
+msgid "Invalid Website Token format. Please use only letters, numbers, hyphens, and underscores."
+msgstr "تنسيق رمز موقع الويب غير صالح. يرجى استخدام الحروف والأرقام والشرطات والشرطات السفلية فقط."
+
+#. translators: %s: Error message from the token validation API
+#: includes/class-fivechat-settings.php:135
+msgid "Token validation failed: %s"
+msgstr "فشل التحقق من الرمز: %s"
+
+#: includes/class-fivechat-settings.php:150
+msgid "Website Token validated successfully! Your 5chat widget is now active."
+msgstr "تم التحقق من رمز موقع الويب بنجاح! أداة 5chat الخاصة بك نشطة الآن."
+
+#: includes/class-fivechat-settings.php:169
+msgid "Paste your Website Token here"
+msgstr "الصق رمز موقع الويب الخاص بك هنا"
+
+#: includes/class-fivechat-settings.php:171
+msgid "Find your Website Token in your 5chat dashboard."
+msgstr "اعثر على رمز موقع الويب الخاص بك في لوحة تحكم 5chat."
+
+#: includes/class-fivechat-settings.php:200
+msgid "Open Dashboard"
+msgstr "فتح لوحة التحكم"
+
+#: includes/class-fivechat-settings.php:209
+msgid "Widget Configuration"
+msgstr "تكوين الأداة"
+
+#: includes/class-fivechat-settings.php:211
+msgid "Configure your 5chat widget by entering your Website Token below. The chat widget will automatically appear on your site once configured."
+msgstr "قم بتكوين أداة 5chat الخاصة بك عن طريق إدخال رمز موقع الويب الخاص بك أدناه. ستظهر أداة الدردشة تلقائيًا على موقعك بمجرد تكوينها."
+
+#: includes/class-fivechat-settings.php:223
+msgid "Save Configuration"
+msgstr "حفظ التكوين"
+
+#: includes/class-fivechat-settings.php:232
+msgid "Quick Setup Guide"
+msgstr "دليل الإعداد السريع"
+
+#: includes/class-fivechat-settings.php:238
+msgid "Get Your Token"
+msgstr "احصل على الرمز الخاص بك"
+
+#: includes/class-fivechat-settings.php:240
+msgid "Visit your"
+msgstr "قم بزيارة"
+
+#: includes/class-fivechat-settings.php:242
+msgid "widget configuration page"
+msgstr "صفحة تكوين الأداة"
+
+#: includes/class-fivechat-settings.php:245
+msgid "to copy your Website Token."
+msgstr "لنسخ رمز موقع الويب الخاص بك."
+
+#: includes/class-fivechat-settings.php:252
+msgid "Paste & Save"
+msgstr "لصق وحفظ"
+
+#: includes/class-fivechat-settings.php:253
+msgid "Paste your token in the field above and click "Save Configuration". The token will be validated when you save."
+msgstr "الصق الرمز الخاص بك في الحقل أعلاه وانقر فوق "حفظ التكوين". سيتم التحقق من الرمز عند الحفظ."
+
+#: includes/class-fivechat-settings.php:259
+msgid "Save & Go Live"
+msgstr "حفظ وتفعيل"
+
+#: includes/class-fivechat-settings.php:260
+msgid "Click "Save Configuration" and your chat widget will immediately appear on your website."
+msgstr "انقر فوق "حفظ التكوين" وستظهر أداة الدردشة الخاصة بك على الفور على موقع الويب الخاص بك."
+
+#: includes/class-fivechat-settings.php:267
+msgid "Need help?"
+msgstr "هل تحتاج مساعدة؟"
+
+#: includes/class-fivechat-settings.php:268
+msgid "Contact"
+msgstr "تواصل مع"
+
+#: includes/class-fivechat-settings.php:270
+msgid "5chat support"
+msgstr "دعم 5chat"
+
+#: includes/class-fivechat-settings.php:329
+msgid "5chat"
+msgstr "5chat"

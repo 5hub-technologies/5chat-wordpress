@@ -131,7 +131,7 @@ class FIVECHAT_Admin {
         $settings_link = sprintf(
             '<a href="%s">%s</a>',
             esc_url( admin_url( 'options-general.php?page=fivechat-settings' ) ),
-            esc_html__( 'Settings', '5chat-blazing-fast-live-chat' )
+_x( 'Settings', 'plugin settings page link text', '5chat-blazing-fast-live-chat' )
         );
         array_unshift( $links, $settings_link );
         return $links;

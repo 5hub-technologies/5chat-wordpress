@@ -1,0 +1,164 @@
+# Dutch translation for 5chat - Blazing fast live chat
+# Copyright (C) 2024 5chat
+# This file is distributed under the same license as the 5chat - Blazing fast live chat package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 5chat - Blazing fast live chat 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Dutch\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/class-fivechat-admin.php:69
+msgid "5chat Live Chat is active, but no Website Token is configured."
+msgstr "5chat Live Chat is actief, maar er is geen Website Token geconfigureerd."
+
+#: includes/class-fivechat-admin.php:83
+msgid "5chat Live Chat token appears to be invalid."
+msgstr "5chat Live Chat token lijkt ongeldig te zijn."
+
+#: includes/class-fivechat-admin.php:90
+msgid "5chat Live Chat token appears to be invalid."
+msgstr "5chat Live Chat token lijkt ongeldig te zijn."
+
+#. translators: %s: URL to the settings page
+#: includes/class-fivechat-admin.php:114
+msgid "Please <a href="%s">update your settings</a> to enable the chat widget."
+msgstr "Gelieve <a href="%s">uw instellingen bij te werken</a> om de chat widget in te schakelen."
+
+#: includes/class-fivechat-admin.php:134
+msgid "Settings"
+msgstr "Instellingen"
+
+#: includes/class-fivechat-admin.php:153
+msgid "No token configured"
+msgstr "Geen token geconfigureerd"
+
+#: includes/class-fivechat-admin.php:165
+msgid "Token is valid and cached"
+msgstr "Token is geldig en gecached"
+
+#: includes/class-fivechat-admin.php:166
+msgid "Token validation required"
+msgstr "Token validatie vereist"
+
+#: includes/class-fivechat-token-validator.php:42
+msgid "Token cannot be empty."
+msgstr "Token kan niet leeg zijn."
+
+#: includes/class-fivechat-token-validator.php:53
+msgid "Invalid token. Please check your Website Token in your 5chat dashboard."
+msgstr "Ongeldig token. Controleer uw Website Token in uw 5chat dashboard."
+
+#: includes/class-fivechat-token-validator.php:88
+msgid "Unable to connect to 5chat. Please check your internet connection and try again."
+msgstr "Kan geen verbinding maken met 5chat. Controleer uw internetverbinding en probeer opnieuw."
+
+#: includes/class-fivechat-token-validator.php:103
+msgid "Invalid token. Please check your Website Token in your 5chat dashboard."
+msgstr "Ongeldig token. Controleer uw Website Token in uw 5chat dashboard."
+
+#. translators: %d: HTTP response status code
+#: includes/class-fivechat-token-validator.php:110
+msgid "Token validation failed (HTTP %d). Please try again or contact 5chat support."
+msgstr "Token validatie mislukt (HTTP %d). Probeer opnieuw of neem contact op met 5chat ondersteuning."
+
+#: includes/class-fivechat-settings.php:91
+msgid "Website Token"
+msgstr "Website Token"
+
+#: includes/class-fivechat-settings.php:119
+msgid "Invalid Website Token format. Please use only letters, numbers, hyphens, and underscores."
+msgstr "Ongeldig Website Token formaat. Gebruik alleen letters, cijfers, koppeltekens en underscores."
+
+#. translators: %s: Error message from the token validation API
+#: includes/class-fivechat-settings.php:135
+msgid "Token validation failed: %s"
+msgstr "Token validatie mislukt: %s"
+
+#: includes/class-fivechat-settings.php:150
+msgid "Website Token validated successfully! Your 5chat widget is now active."
+msgstr "Website Token succesvol gevalideerd! Uw 5chat widget is nu actief."
+
+#: includes/class-fivechat-settings.php:169
+msgid "Paste your Website Token here"
+msgstr "Plak uw Website Token hier"
+
+#: includes/class-fivechat-settings.php:171
+msgid "Find your Website Token in your 5chat dashboard."
+msgstr "Vind uw Website Token in uw 5chat dashboard."
+
+#: includes/class-fivechat-settings.php:200
+msgid "Open Dashboard"
+msgstr "Dashboard Openen"
+
+#: includes/class-fivechat-settings.php:209
+msgid "Widget Configuration"
+msgstr "Widget Configuratie"
+
+#: includes/class-fivechat-settings.php:211
+msgid "Configure your 5chat widget by entering your Website Token below. The chat widget will automatically appear on your site once configured."
+msgstr "Configureer uw 5chat widget door uw Website Token hieronder in te voeren. De chat widget zal automatisch verschijnen op uw site zodra het geconfigureerd is."
+
+#: includes/class-fivechat-settings.php:223
+msgid "Save Configuration"
+msgstr "Configuratie Opslaan"
+
+#: includes/class-fivechat-settings.php:232
+msgid "Quick Setup Guide"
+msgstr "Snelle Setup Gids"
+
+#: includes/class-fivechat-settings.php:238
+msgid "Get Your Token"
+msgstr "Verkrijg Uw Token"
+
+#: includes/class-fivechat-settings.php:240
+msgid "Visit your"
+msgstr "Bezoek uw"
+
+#: includes/class-fivechat-settings.php:242
+msgid "widget configuration page"
+msgstr "widget configuratie pagina"
+
+#: includes/class-fivechat-settings.php:245
+msgid "to copy your Website Token."
+msgstr "om uw Website Token te kopiëren."
+
+#: includes/class-fivechat-settings.php:252
+msgid "Paste & Save"
+msgstr "Plakken en Opslaan"
+
+#: includes/class-fivechat-settings.php:253
+msgid "Paste your token in the field above and click "Save Configuration". The token will be validated when you save."
+msgstr "Plak uw token in het veld hierboven en klik op "Configuratie Opslaan". Het token wordt gevalideerd wanneer u opslaat."
+
+#: includes/class-fivechat-settings.php:259
+msgid "Save & Go Live"
+msgstr "Opslaan en Live Gaan"
+
+#: includes/class-fivechat-settings.php:260
+msgid "Click "Save Configuration" and your chat widget will immediately appear on your website."
+msgstr "Klik op "Configuratie Opslaan" en uw chat widget zal onmiddellijk verschijnen op uw website."
+
+#: includes/class-fivechat-settings.php:267
+msgid "Need help?"
+msgstr "Hulp nodig?"
+
+#: includes/class-fivechat-settings.php:268
+msgid "Contact"
+msgstr "Contacteer"
+
+#: includes/class-fivechat-settings.php:270
+msgid "5chat support"
+msgstr "5chat ondersteuning"
+
+#: includes/class-fivechat-settings.php:329
+msgid "5chat"
+msgstr "5chat"

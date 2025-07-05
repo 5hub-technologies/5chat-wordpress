@@ -55,8 +55,8 @@ class FIVECHAT_Settings {
      */
     public function add_admin_menu() {
         add_options_page(
-            '5chat Settings',
-            '5chat',
+            __( '5chat Settings', '5chat-blazing-fast-live-chat' ),
+            __( '5chat', '5chat-blazing-fast-live-chat' ),
             'manage_options',
             'fivechat-settings',
             array( $this, 'render_options_page' )
@@ -237,12 +237,14 @@ class FIVECHAT_Settings {
                             <div class="fivechat-step-content">
                                 <strong><?php esc_html_e( 'Get Your Token', '5chat-blazing-fast-live-chat' ); ?></strong>
                                 <p>
-                                    <?php esc_html_e( 'Visit your', '5chat-blazing-fast-live-chat' ); ?>
-                                    <a href="https://5chat.io/dashboard/configuration/widget" target="_blank" class="fivechat-link">
-                                        <?php esc_html_e( 'widget configuration page', '5chat-blazing-fast-live-chat' ); ?>
-                                        <span class="dashicons dashicons-external"></span>
-                                    </a>
-                                    <?php esc_html_e( 'to copy your Website Token.', '5chat-blazing-fast-live-chat' ); ?>
+                                    <?php
+                                    /* translators: %s: URL to the widget configuration page */
+                                    echo wp_kses_post( sprintf(
+                                        /* translators: %s: URL to the widget configuration page */
+                                        __( 'Visit your <a href="%s" target="_blank" class="fivechat-link">widget configuration page <span class="dashicons dashicons-external"></span></a> to copy your Website Token.', '5chat-blazing-fast-live-chat' ),
+                                        esc_url( 'https://5chat.io/dashboard/configuration/widget' )
+                                    ) );
+                                    ?>
                                 </p>
                             </div>
                         </div>
@@ -250,14 +252,18 @@ class FIVECHAT_Settings {
                             <div class="fivechat-step-number">2</div>
                             <div class="fivechat-step-content">
                                 <strong><?php esc_html_e( 'Paste & Save', '5chat-blazing-fast-live-chat' ); ?></strong>
-                                <p><?php esc_html_e( 'Paste your token in the field above and click "Save Configuration". The token will be validated when you save.', '5chat-blazing-fast-live-chat' ); ?></p>
+                                <p><?php 
+                                /* translators: Instructions for users on how to save their chat widget token */
+                                esc_html_e( 'Paste your token in the field above and click "Save Configuration". The token will be validated when you save.', '5chat-blazing-fast-live-chat' ); ?></p>
                             </div>
                         </div>
                         <div class="fivechat-step">
                             <div class="fivechat-step-number">3</div>
                             <div class="fivechat-step-content">
                                 <strong><?php esc_html_e( 'Save & Go Live', '5chat-blazing-fast-live-chat' ); ?></strong>
-                                <p><?php esc_html_e( 'Click "Save Configuration" and your chat widget will immediately appear on your website.', '5chat-blazing-fast-live-chat' ); ?></p>
+                                <p><?php 
+                                /* translators: Final step instruction for activating the chat widget */
+                                esc_html_e( 'Click "Save Configuration" and your chat widget will immediately appear on your website.', '5chat-blazing-fast-live-chat' ); ?></p>
                             </div>
                         </div>
                     </div>
@@ -265,11 +271,14 @@ class FIVECHAT_Settings {
                     <div class="fivechat-help-footer">
                         <p>
                             <strong><?php esc_html_e( 'Need help?', '5chat-blazing-fast-live-chat' ); ?></strong>
-                            <?php esc_html_e( 'Contact', '5chat-blazing-fast-live-chat' ); ?>
-                            <a href="https://5chat.io" target="_blank" class="fivechat-link">
-                                <?php esc_html_e( '5chat support', '5chat-blazing-fast-live-chat' ); ?>
-                                <span class="dashicons dashicons-external"></span>
-                            </a>
+                            <?php
+                            /* translators: %s: URL to the support page */
+                            echo wp_kses_post( sprintf(
+                                /* translators: %s: URL to the support page */
+                                __( 'Contact <a href="%s" target="_blank" class="fivechat-link">5chat support <span class="dashicons dashicons-external"></span></a>', '5chat-blazing-fast-live-chat' ),
+                                esc_url( 'https://5chat.io' )
+                            ) );
+                            ?>
                         </p>
                     </div>
                 </div>
@@ -326,7 +335,7 @@ class FIVECHAT_Settings {
             'src'     => esc_url( $image_url ),
             'width'   => '64',
             'height'  => '64',
-            'alt'     => esc_attr__( '5chat', '5chat-blazing-fast-live-chat' ),
+            'alt'     => _x( '5chat', 'logo image alt text', '5chat-blazing-fast-live-chat' ),
             'class'   => 'fivechat-logo-icon',
             'loading' => 'lazy',
         );

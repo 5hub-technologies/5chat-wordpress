@@ -1,0 +1,164 @@
+# Chinese (Simplified) translation for 5chat - Blazing fast live chat
+# Copyright (C) 2024 5chat
+# This file is distributed under the same license as the 5chat - Blazing fast live chat package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 5chat - Blazing fast live chat 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Chinese (Simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: includes/class-fivechat-admin.php:69
+msgid "5chat Live Chat is active, but no Website Token is configured."
+msgstr "5chat 在线聊天已激活，但未配置网站令牌。"
+
+#: includes/class-fivechat-admin.php:83
+msgid "5chat Live Chat token appears to be invalid."
+msgstr "5chat 在线聊天令牌似乎无效。"
+
+#: includes/class-fivechat-admin.php:90
+msgid "5chat Live Chat token appears to be invalid."
+msgstr "5chat 在线聊天令牌似乎无效。"
+
+#. translators: %s: URL to the settings page
+#: includes/class-fivechat-admin.php:114
+msgid "Please <a href="%s">update your settings</a> to enable the chat widget."
+msgstr "请<a href="%s">更新您的设置</a>以启用聊天小部件。"
+
+#: includes/class-fivechat-admin.php:134
+msgid "Settings"
+msgstr "设置"
+
+#: includes/class-fivechat-admin.php:153
+msgid "No token configured"
+msgstr "未配置令牌"
+
+#: includes/class-fivechat-admin.php:165
+msgid "Token is valid and cached"
+msgstr "令牌有效且已缓存"
+
+#: includes/class-fivechat-admin.php:166
+msgid "Token validation required"
+msgstr "需要令牌验证"
+
+#: includes/class-fivechat-token-validator.php:42
+msgid "Token cannot be empty."
+msgstr "令牌不能为空。"
+
+#: includes/class-fivechat-token-validator.php:53
+msgid "Invalid token. Please check your Website Token in your 5chat dashboard."
+msgstr "无效令牌。请在您的 5chat 仪表板中检查您的网站令牌。"
+
+#: includes/class-fivechat-token-validator.php:88
+msgid "Unable to connect to 5chat. Please check your internet connection and try again."
+msgstr "无法连接到 5chat。请检查您的互联网连接并重试。"
+
+#: includes/class-fivechat-token-validator.php:103
+msgid "Invalid token. Please check your Website Token in your 5chat dashboard."
+msgstr "无效令牌。请在您的 5chat 仪表板中检查您的网站令牌。"
+
+#. translators: %d: HTTP response status code
+#: includes/class-fivechat-token-validator.php:110
+msgid "Token validation failed (HTTP %d). Please try again or contact 5chat support."
+msgstr "令牌验证失败（HTTP %d）。请重试或联系 5chat 支持。"
+
+#: includes/class-fivechat-settings.php:91
+msgid "Website Token"
+msgstr "网站令牌"
+
+#: includes/class-fivechat-settings.php:119
+msgid "Invalid Website Token format. Please use only letters, numbers, hyphens, and underscores."
+msgstr "无效的网站令牌格式。请仅使用字母、数字、连字符和下划线。"
+
+#. translators: %s: Error message from the token validation API
+#: includes/class-fivechat-settings.php:135
+msgid "Token validation failed: %s"
+msgstr "令牌验证失败：%s"
+
+#: includes/class-fivechat-settings.php:150
+msgid "Website Token validated successfully! Your 5chat widget is now active."
+msgstr "网站令牌验证成功！您的 5chat 小部件现已激活。"
+
+#: includes/class-fivechat-settings.php:169
+msgid "Paste your Website Token here"
+msgstr "在此粘贴您的网站令牌"
+
+#: includes/class-fivechat-settings.php:171
+msgid "Find your Website Token in your 5chat dashboard."
+msgstr "在您的 5chat 仪表板中找到您的网站令牌。"
+
+#: includes/class-fivechat-settings.php:200
+msgid "Open Dashboard"
+msgstr "打开仪表板"
+
+#: includes/class-fivechat-settings.php:209
+msgid "Widget Configuration"
+msgstr "小部件配置"
+
+#: includes/class-fivechat-settings.php:211
+msgid "Configure your 5chat widget by entering your Website Token below. The chat widget will automatically appear on your site once configured."
+msgstr "通过在下方输入您的网站令牌来配置您的 5chat 小部件。配置完成后，聊天小部件将自动出现在您的网站上。"
+
+#: includes/class-fivechat-settings.php:223
+msgid "Save Configuration"
+msgstr "保存配置"
+
+#: includes/class-fivechat-settings.php:232
+msgid "Quick Setup Guide"
+msgstr "快速设置指南"
+
+#: includes/class-fivechat-settings.php:238
+msgid "Get Your Token"
+msgstr "获取您的令牌"
+
+#: includes/class-fivechat-settings.php:240
+msgid "Visit your"
+msgstr "访问您的"
+
+#: includes/class-fivechat-settings.php:242
+msgid "widget configuration page"
+msgstr "小部件配置页面"
+
+#: includes/class-fivechat-settings.php:245
+msgid "to copy your Website Token."
+msgstr "以复制您的网站令牌。"
+
+#: includes/class-fivechat-settings.php:252
+msgid "Paste & Save"
+msgstr "粘贴并保存"
+
+#: includes/class-fivechat-settings.php:253
+msgid "Paste your token in the field above and click "Save Configuration". The token will be validated when you save."
+msgstr "在上方字段中粘贴您的令牌，然后单击"保存配置"。保存时将验证令牌。"
+
+#: includes/class-fivechat-settings.php:259
+msgid "Save & Go Live"
+msgstr "保存并上线"
+
+#: includes/class-fivechat-settings.php:260
+msgid "Click "Save Configuration" and your chat widget will immediately appear on your website."
+msgstr "单击"保存配置"，您的聊天小部件将立即出现在您的网站上。"
+
+#: includes/class-fivechat-settings.php:267
+msgid "Need help?"
+msgstr "需要帮助吗？"
+
+#: includes/class-fivechat-settings.php:268
+msgid "Contact"
+msgstr "联系"
+
+#: includes/class-fivechat-settings.php:270
+msgid "5chat support"
+msgstr "5chat 支持"
+
+#: includes/class-fivechat-settings.php:329
+msgid "5chat"
+msgstr "5chat"

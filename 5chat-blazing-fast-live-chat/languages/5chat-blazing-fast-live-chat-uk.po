@@ -1,0 +1,164 @@
+# Ukrainian translation for 5chat - Blazing fast live chat
+# Copyright (C) 2024 5chat
+# This file is distributed under the same license as the 5chat - Blazing fast live chat package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 5chat - Blazing fast live chat 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Ukrainian\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: includes/class-fivechat-admin.php:69
+msgid "5chat Live Chat is active, but no Website Token is configured."
+msgstr "5chat Live Chat активний, але токен веб-сайту не налаштований."
+
+#: includes/class-fivechat-admin.php:83
+msgid "5chat Live Chat token appears to be invalid."
+msgstr "Токен 5chat Live Chat здається недійсним."
+
+#: includes/class-fivechat-admin.php:90
+msgid "5chat Live Chat token appears to be invalid."
+msgstr "Токен 5chat Live Chat здається недійсним."
+
+#. translators: %s: URL to the settings page
+#: includes/class-fivechat-admin.php:114
+msgid "Please <a href="%s">update your settings</a> to enable the chat widget."
+msgstr "Будь ласка, <a href="%s">оновіть налаштування</a>, щоб увімкнути віджет чату."
+
+#: includes/class-fivechat-admin.php:134
+msgid "Settings"
+msgstr "Налаштування"
+
+#: includes/class-fivechat-admin.php:153
+msgid "No token configured"
+msgstr "Токен не налаштований"
+
+#: includes/class-fivechat-admin.php:165
+msgid "Token is valid and cached"
+msgstr "Токен дійсний і кешований"
+
+#: includes/class-fivechat-admin.php:166
+msgid "Token validation required"
+msgstr "Потрібна перевірка токена"
+
+#: includes/class-fivechat-token-validator.php:42
+msgid "Token cannot be empty."
+msgstr "Токен не може бути порожнім."
+
+#: includes/class-fivechat-token-validator.php:53
+msgid "Invalid token. Please check your Website Token in your 5chat dashboard."
+msgstr "Недійсний токен. Будь ласка, перевірте токен веб-сайту в панелі керування 5chat."
+
+#: includes/class-fivechat-token-validator.php:88
+msgid "Unable to connect to 5chat. Please check your internet connection and try again."
+msgstr "Не вдалося підключитися до 5chat. Будь ласка, перевірте інтернет-з'єднання та спробуйте знову."
+
+#: includes/class-fivechat-token-validator.php:103
+msgid "Invalid token. Please check your Website Token in your 5chat dashboard."
+msgstr "Недійсний токен. Будь ласка, перевірте токен веб-сайту в панелі керування 5chat."
+
+#. translators: %d: HTTP response status code
+#: includes/class-fivechat-token-validator.php:110
+msgid "Token validation failed (HTTP %d). Please try again or contact 5chat support."
+msgstr "Перевірка токена не вдалася (HTTP %d). Будь ласка, спробуйте знову або зверніться до служби підтримки 5chat."
+
+#: includes/class-fivechat-settings.php:91
+msgid "Website Token"
+msgstr "Токен веб-сайту"
+
+#: includes/class-fivechat-settings.php:119
+msgid "Invalid Website Token format. Please use only letters, numbers, hyphens, and underscores."
+msgstr "Неправильний формат токена веб-сайту. Будь ласка, використовуйте лише літери, цифри, дефіси та підкреслення."
+
+#. translators: %s: Error message from the token validation API
+#: includes/class-fivechat-settings.php:135
+msgid "Token validation failed: %s"
+msgstr "Перевірка токена не вдалася: %s"
+
+#: includes/class-fivechat-settings.php:150
+msgid "Website Token validated successfully! Your 5chat widget is now active."
+msgstr "Токен веб-сайту успішно перевірений! Ваш віджет 5chat тепер активний."
+
+#: includes/class-fivechat-settings.php:169
+msgid "Paste your Website Token here"
+msgstr "Вставте сюди токен веб-сайту"
+
+#: includes/class-fivechat-settings.php:171
+msgid "Find your Website Token in your 5chat dashboard."
+msgstr "Знайдіть токен веб-сайту в панелі керування 5chat."
+
+#: includes/class-fivechat-settings.php:200
+msgid "Open Dashboard"
+msgstr "Відкрити панель керування"
+
+#: includes/class-fivechat-settings.php:209
+msgid "Widget Configuration"
+msgstr "Налаштування віджета"
+
+#: includes/class-fivechat-settings.php:211
+msgid "Configure your 5chat widget by entering your Website Token below. The chat widget will automatically appear on your site once configured."
+msgstr "Налаштуйте віджет 5chat, ввівши токен веб-сайту нижче. Віджет чату автоматично з'явиться на вашому сайті після налаштування."
+
+#: includes/class-fivechat-settings.php:223
+msgid "Save Configuration"
+msgstr "Зберегти конфігурацію"
+
+#: includes/class-fivechat-settings.php:232
+msgid "Quick Setup Guide"
+msgstr "Посібник швидкого налаштування"
+
+#: includes/class-fivechat-settings.php:238
+msgid "Get Your Token"
+msgstr "Отримайте ваш токен"
+
+#: includes/class-fivechat-settings.php:240
+msgid "Visit your"
+msgstr "Відвідайте вашу"
+
+#: includes/class-fivechat-settings.php:242
+msgid "widget configuration page"
+msgstr "сторінку налаштування віджета"
+
+#: includes/class-fivechat-settings.php:245
+msgid "to copy your Website Token."
+msgstr "щоб скопіювати токен веб-сайту."
+
+#: includes/class-fivechat-settings.php:252
+msgid "Paste & Save"
+msgstr "Вставити та зберегти"
+
+#: includes/class-fivechat-settings.php:253
+msgid "Paste your token in the field above and click "Save Configuration". The token will be validated when you save."
+msgstr "Вставте токен у поле вище та натисніть "Зберегти конфігурацію". Токен буде перевірений при збереженні."
+
+#: includes/class-fivechat-settings.php:259
+msgid "Save & Go Live"
+msgstr "Зберегти та активувати"
+
+#: includes/class-fivechat-settings.php:260
+msgid "Click "Save Configuration" and your chat widget will immediately appear on your website."
+msgstr "Натисніть "Зберегти конфігурацію" і ваш віджет чату негайно з'явиться на веб-сайті."
+
+#: includes/class-fivechat-settings.php:267
+msgid "Need help?"
+msgstr "Потрібна допомога?"
+
+#: includes/class-fivechat-settings.php:268
+msgid "Contact"
+msgstr "Зв'яжіться з"
+
+#: includes/class-fivechat-settings.php:270
+msgid "5chat support"
+msgstr "службою підтримки 5chat"
+
+#: includes/class-fivechat-settings.php:329
+msgid "5chat"
+msgstr "5chat"
